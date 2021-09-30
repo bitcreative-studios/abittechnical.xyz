@@ -7,21 +7,23 @@ import { getIntrospectionQuery, graphql, printSchema } from 'gatsby/graphql'
  * (via:https://github.com/damassi/gatsby-starter-typescript-rebass-netlifycms/blob/master/gatsby-node.js)
  */
 exports.onPostBootstrap = async ({ store }) => {
-  try {
-    const introspectionQuery = getIntrospectionQuery()
-    const { schema } = store.getState()
-    const jsonSchema = await graphql(schema, introspectionQuery)
-    const sdlSchema = printSchema(schema)
+  if (process.env.NODE_ENV === 'development') {
+    try {
+      const introspectionQuery = getIntrospectionQuery()
+      const { schema } = store.getState()
+      const jsonSchema = await graphql(schema, introspectionQuery)
+      const sdlSchema = printSchema(schema)
 
-    write.sync('schema.json', JSON.stringify(jsonSchema.data), {})
-    write.sync('schema.graphql', sdlSchema, {})
+      write.sync('schema.json', JSON.stringify(jsonSchema.data), {})
+      write.sync('schema.graphql', sdlSchema, {})
 
-    console.log('\n\n[gatsby-plugin-extract-schema] Wrote schema\n') // eslint-disable-line
-  } catch (error) {
-    console.error(
-      '\n\n[gatsby-plugin-extract-schema] Failed to write schema: ',
-      error,
-      '\n',
-    )
+      console.log('\n\n[gatsby-plugin-extract-schema] Wrote schema\n') // eslint-disable-line
+    } catch (error) {
+      console.error(
+        '\n\n[gatsby-plugin-extract-schema] Failed to write schema: ',
+        error,
+        '\n',
+      )
+    }
   }
 }
