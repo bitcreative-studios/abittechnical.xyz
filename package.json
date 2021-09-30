@@ -1,9 +1,19 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "a-bit-technical.zyx",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "Source code for personal blog",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "George Bockari <george@revisioned.consulting>",
+  "scripts": {
+    "build": "gatsby build",
+    "commit": "cz",
+    "develop": "GATSBY_GRAPHQL_IDE=playground gatsby develop",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
+    "start": "yarn develop",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+  },
   "dependencies": {
     "gatsby": "^3.13.1",
     "gatsby-plugin-image": "^1.13.0",
@@ -16,29 +26,40 @@
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "react-helmet": "^6.1.0"
+    "react-helmet": "^6.1.0",
+    "styled-components": "^5.3.1",
+    "tailwindcss": "^2.2.16"
   },
   "devDependencies": {
-    "prettier": "2.4.1"
+    "@types/node": "^16.10.2",
+    "@types/react": "^17.0.25",
+    "@types/react-dom": "^17.0.9",
+    "@types/react-helmet": "^6.1.2",
+    "@types/styled-components": "^5.1.14",
+    "cz-conventional-changelog": "3.3.0",
+    "esm": "^3.2.25",
+    "gatsby-plugin-styled-components": "^4.14.0",
+    "prettier": "2.4.1",
+    "twin.macro": "^2.7.0",
+    "typescript": "^4.4.3",
+    "write": "^2.0.0"
   },
   "keywords": [
-    "gatsby"
+    "gatsby",
+    "blog",
+    "fullstack"
   ],
-  "license": "0BSD",
-  "scripts": {
-    "build": "gatsby build",
-    "develop": "gatsby develop",
-    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
-    "start": "gatsby develop",
-    "serve": "gatsby serve",
-    "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
-  },
+  "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+    "url": "https://github.com/bitwhys/abittechnical.xyz"
   },
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/bitwhys/abittechnical.xyz/issues"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
