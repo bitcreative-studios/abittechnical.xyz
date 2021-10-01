@@ -6,7 +6,9 @@ module.exports = {
     extend: {
       fontFamily: {
         body: ['ruddy', ...defaultTheme.fontFamily.sans],
+        text: ['adelle-sans', ...defaultTheme.fontFamily.sans],
         heading: ['meloche', ...defaultTheme.fontFamily.sans],
+        display: ['museo', ...defaultTheme.fontFamily.serif],
       },
       colors: {
         primary: '#ff0844',
