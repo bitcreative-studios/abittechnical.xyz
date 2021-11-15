@@ -6,7 +6,7 @@ export type HeadingProps = {
 const Heading = ({ text }: HeadingProps) => {
   return (
     <div>
-      <h1 className="text-4xl text-gray-500 font-bold">{text}</h1>
+      <h1>{text}</h1>
     </div>
   )
 }
