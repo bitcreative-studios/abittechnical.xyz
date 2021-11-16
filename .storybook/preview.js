@@ -1,10 +1,6 @@
 import React from 'react'
 import browserReset from '../styles/browserReset'
-import styled, {
-  createGlobalStyle,
-  css,
-  ThemeProvider,
-} from 'styled-components'
+import { createGlobalStyle, ThemeProvider } from 'styled-components'
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
@@ -16,17 +12,6 @@ export const parameters = {
   },
 }
 
-const Background = styled.div`
-  height: 100vh;
-  background-image: repeating-radial-gradient(
-    center center,
-    var(--color-primary),
-    var(--color-primary) 1px,
-    var(--color-secondary) 1px,
-    var(--color-secondary) 100%
-  );
-  background-size: 8px 8px;
-`
 const GlobalStyles = createGlobalStyle`
  ${browserReset}
  & {
@@ -39,9 +24,7 @@ export const decorators = [
   Story => (
     <ThemeProvider theme={{}}>
       <GlobalStyles />
-      <Background>
-        <Story />
-      </Background>
+      <Story />
     </ThemeProvider>
   ),
 ]

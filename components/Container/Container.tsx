@@ -8,7 +8,7 @@ const Wrapper = styled.div`
   max-width: 800px;
   padding: 8rem 4rem 4rem 4rem;
   border: 4px solid black;
-  box-shadow: 12px 12px 0 0 black;
+  box-shadow: var(--container-shadow);
   background: repeating-radial-gradient(
       var(--color-secondary),
       var(--color-secondary) 6px,
@@ -38,13 +38,11 @@ const Wrapper = styled.div`
 `
 
 const SectionTitle = styled.h2`
+  //font-family: var(--font-family-primary);
   font-size: clamp(2rem, 4vw, var(--font-size-h2));
-  font-family: var(--font-family-primary);
 `
 
-const ContentWrapper = styled.div`
-  font-family: 'Inter', sans-serif;
-`
+const ContentWrapper = styled.div``
 const Actions = styled.div``
 
 const Container = ({}: ContentProps) => {
